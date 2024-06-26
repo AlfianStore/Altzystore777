@@ -232,11 +232,17 @@
         </div>
     </section>
 
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.2.2/dist/cdn.min.js" defer></script>
     <footer id="contact">
+        <section id="contact" class="contact-section" x-data="https://wa.link/6zwbgi">
         <div>
             <h2>Hubungi Saya</h2>
             <p>Email: alfianawinanto7@gmail.com</p>
             <p>WhatsApp: 088299213858</p>
+        <button @click="openWhatsApp">Hubungi Kami di WhatsApp</button>
+        </section>
+        ...
+        <script src="script.js"></script>
         </div>
     </footer>
  
@@ -316,16 +322,4 @@
   </script>
 </body>
 </html>
-<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.2.2/dist/cdn.min.js" defer></script>
-</head>
-<body>
-    ...
-    <section id="contact" class="contact-section" x-data="https://wa.link/6zwbgi">
-        <h2>Hubungi Saya</h2>
-        <p>Email: alfianawinanto7@gmail.com</p>
-        <p>WhatsApp: 088299213858</p>
-        <button @click="openWhatsApp">Hubungi Kami di WhatsApp</button>
-    </section>
-    ...
-    <script src="script.js"></script>
 </body>
