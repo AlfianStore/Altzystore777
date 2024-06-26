@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altzy Store</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        body {
+            background-image: url('https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Z2FtaW5nfGVufDB8fDB8fHww');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            color: #ffffff; /* Set text color to white */
+        }
+        header, section, footer {
+            background-color: rgba(0, 0, 0, 0.6); /* Darker semi-transparent background for better contrast */
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            color: #ffffff; /* Ensure text inside these sections is also white */
+            animation: slideIn 1s ease-out;
+        }
+        header {
+            animation-delay: 0s;
+        }
+        section {
+            animation-delay: 0.5s;
+        }
+        footer {
+            animation-delay: 1s;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff; /* Ensure the nav links are white */
+        }
+        .menu-item {
+            margin-bottom: 20px;
+        }
+        .cart-item {
+            margin-bottom: 10px;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333333;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-content a {
+            color: #ffffff; /* Ensure dropdown links are white */
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #575757;
+        }
+        button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            animation: bounce 2s infinite;
+        }
+        button:hover {
+            transform: scale(1.1);
+        }
+        .featured-section img {
+            transition: transform 0.5s;
+        }
+        .featured-section img:hover {
+            transform: scale(1.1);
+        }
+        .order-form {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+        .order-form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .order-form input[type="text"], .order-form input[type="number"] {
+            padding: 8px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .order-summary {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            color: #ffffff;
+        }
+        .order-summary p {
+            margin-bottom: 5px;
+        }
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Selamat datang di Altzy Store</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">Tentang Saya</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#">Pembayaran</a>
+                    <div class="dropdown-content">
+                        <a href="#">OVO</a>
+                        <a href="#">Gopay</a>
+                        <a href="#">Dana</a>
+                        <a href="#">Cash</a>
+                    </div>
+                </li>
+                <li><a href="#">Kembalian</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <div>
+            <h2>Altzy Store</h2>
+            <p>Di Altzy Store Melayani apapun jenisnya mulai dari butuh patner hiling?, bikin web?, mabar ViP/joki gendong? semuanya bisa.</p>
+        </div>
+    </section>
+
+    <section id="featured-sections" class="content">
+        <div class="container">
+            <h2>Pilihan</h2>
+            <div class="featured-sections">
+                <div class="featured-section">
+                    <img src="https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHByb2dyYW1taW5nfGVufDB8fDB8fHww" alt="Feature 1">
+                    <h3>Programming</h3>
+                    <p>Yang mau bikin website? Hubungi saya.</p>
+                    <button onclick="addItem('Programming', 50000)">Pesan (Rp 50,000)</button>
+                </div>
+                <div class="featured-section">
+                    <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGdhbWluZyUyMG1vYmlsZSUyMGxlZ2VuZHxlbnwwfHwwfHx8MA%3D%3D" alt="Feature 2">
+                    <h3>Joki Gendong/mabar VIP</h3>
+                    <p>Capek kalah terus? Hubungi saya dijamin win streak.</p>
+                    <button onclick="addItem('Joki Gendong', 100000)">Pesan (Rp 100,000)</button>
+                </div>
+                <div class="featured-section">
+                    <img src="https://images.unsplash.com/photo-1619120238346-978e07731e77?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fHRyYXZlbGluZ3xlbnwwfHwwfHx8MA%3D%3D" alt="Feature 3">
+                    <h3>Travel</h3>
+                    <p>Butuh temen hiling? Hubungi saya. Khusus daerah pulau Jawa.</p>
+                    <button onclick="addItem('Travel', 150000)">Pesan (Rp 150,000)</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div>
+            <h2>Our Services</h2>
+            <ul>
+                <li>1. Programming</li>
+                <li>2. Partner hiling</li>
+                <li>3. Mabar ML VIP/joki gendong</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="order-form" class="order-form">
+        <h2>Form Pemesanan</h2>
+        <form id="orderForm">
+            <label for="nama">Nama Pemesan:</label>
+            <input type="text" id="nama" name="nama" required>
+            <label for="nomor-antrian">Nomor Antrian:</label>
+            <input type="number" id="nomor-antrian" name="nomor-antrian" required>
+            <label for="jumlah-pembayaran">Jumlah Pembayaran:</label>
+            <input type="number" id="jumlah-pembayaran" name="jumlah-pembayaran" oninput="hitungKembalian()" required>
+            <label for="total-kembalian">Total Kembalian:</label>
+            <input type="text" id="total-kembalian" name="total-kembalian" readonly>
+            <button type="submit">Submit</button>
+        </form>
+
+        <div class="order-summary">
+            <h2>Ringkasan Pemesanan</h2>
+            <div id="orderSummary"></div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div>
+            <h2>Hubungi Saya</h2>
+            <p>Email: alfianawinanto7@gmail.com</p>
+            <p>WhatsApp: 088299213858</p>
+        </div>
+    </footer>
+ 
+    <script>
+    let orders = []; // Array untuk menyimpan data pemesanan
+
+    function addItem(item, price) {
+        // Tambahkan item ke dalam array orders
+        orders.push({ item: item, price: price });
+
+        // Update ringkasan pemesanan
+        updateOrderSummary();
+    }
+
+    function hitungTotalPembayaran() {
+        let total = 0;
+        orders.forEach(order => {
+            total += order.price;
+        });
+        return total;
+    }
+
+    function hitungKembalian() {
+        const jumlahPembayaran = document.getElementById('jumlah-pembayaran').value;
+        const totalPembayaran = hitungTotalPembayaran();
+        const totalKembalian = jumlahPembayaran - totalPembayaran;
+        document.getElementById('total-kembalian').value = totalKembalian;
+    }
+
+    function updateOrderSummary() {
+        const orderSummaryDiv = document.getElementById('orderSummary');
+        orderSummaryDiv.innerHTML = ''; // Kosongkan dulu div ringkasan
+
+        orders.forEach((order, index) => {
+            const orderItem = document.createElement('p');
+            orderItem.textContent = `Item ${index + 1}: ${order.item} - Rp ${order.price}`;
+            orderSummaryDiv.appendChild(orderItem);
+        });
+
+        // Hitung dan tambahkan total pembayaran ke ringkasan pemesanan
+        const totalPembayaran = hitungTotalPembayaran();
+        const totalPembayaranElement = document.createElement('p');
+        totalPembayaranElement.textContent = `Total Pembayaran: Rp ${totalPembayaran}`;
+        orderSummaryDiv.appendChild(totalPembayaranElement);
+    }
+
+    document.getElementById('orderForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const nama = document.getElementById('nama').value;
+        const nomorAntrian = document.getElementById('nomor-antrian').value;
+        const jumlahPembayaran = document.getElementById('jumlah-pembayaran').value;
+        const totalKembalian = document.getElementById('total-kembalian').value;
+
+        // Simpan pesanan ke dalam array
+        const orderData = {
+            nama: nama,
+            nomorAntrian: nomorAntrian,
+            totalPembayaran: hitungTotalPembayaran(),
+            jumlahPembayaran: jumlahPembayaran,
+            totalKembalian: totalKembalian
+        };
+        orders.push(orderData);
+
+        // Update ringkasan pemesanan
+        updateOrderSummary();
+
+        // Tampilkan konfirmasi
+        alert(`Terima kasih, ${nama}! Detail pesanan Anda:\nNomor Antrian: ${nomorAntrian}\nTotal Pembayaran: Rp ${orderData.totalPembayaran}\nJumlah Pembayaran: ${jumlahPembayaran}\nTotal Kembalian: ${totalKembalian}`);
+
+        // Reset form
+        document.getElementById('orderForm').reset();
+    });
+    </script>
+</body>
+</html>
