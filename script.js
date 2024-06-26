@@ -87,28 +87,16 @@ const items = cart.items.map((item) => ({
 objData.items = JSON.stringify(items);
 objData.total = cart.total;
 
-const message = formatMessage(objData);
-const whatsappUrl = `https://wa.link/6zwbgi${encodeURIComponent(
-  message
-)}`;
-window.open(whatsappUrl);
-
-// Handle queue number display
-handleQueue();
-;
-
-// Function to format the WhatsApp message
-const formatMessage = (obj) => 
-let ;
-try {
-  items = JSON.parse(obj.items);
-  if (!Array.isArray(items)) {
-    throw new Error("Items is not an array");
-  }
-} catch (e) {
-  console.error("Failed to parse items:", e);
-  return "Invalid items data";
-}
+document.addEventListener('alpine:init', () => {
+    Alpine.data('whatsappLink', () => ({
+        openWhatsApp() {
+            const phoneNumber = '088299213858'; // Nomor WhatsApp Anda
+            const message = 'Halo, saya ingin bertanya tentang layanan Anda.'; // Pesan default
+            const url = `https://wa.link/6zwbgi${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+    }));
+});
 
 const corsOptions = {
     origin: "https://github.com/AlfianStore/Altzystore777.git", // Domain yang diizinkan
